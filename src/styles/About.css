@@ -1,0 +1,99 @@
+.about {
+  width: 100%;
+  background-color: pink;
+}
+.about > main {
+  background-color: white;
+  max-width: 800px;
+  height: 100%;
+  margin: auto;
+}
+.about > main > h1 {
+  font: 500 3rem "Roboto";
+  color: #e70;
+  text-align: center;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  background-color: black;
+}
+.about > main > article {
+  margin: 2rem 0;
+}
+.about > main > article > h4 {
+  font: 100 2rem "Roboto";
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2rem 0;
+}
+.about > main > article > p {
+  letter-spacing: 3px;
+  word-spacing: 3px;
+  padding: 2rem;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+.about > main > article > a {
+  background-color: black;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  margin: auto;
+}
+.about > main > article > a:hover {
+  color: crimson;
+  transform: scale(1.1);
+}
+.about > main > div {
+  background-color: black;
+  padding: 2rem;
+  color: white;
+}
+.about > main > div > h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.about > main > div > article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about > main > div > article > div {
+  margin: 2rem;
+}
+.about > main > div > article > div > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+.about > main > div > article > div > h3 {
+  margin: 1rem;
+}
+.about > main > div > article > p {
+  margin: 0 1rem;
+  width: 50%;
+  letter-spacing: 2px;
+  line-height: 150%;
+}
+
+@media screen and (max-width: 600px) {
+  .about > main > h1 {
+    font: 100 3rem "Roboto";
+    text-align: center;
+  }
+  .about > main > article > p {
+    width: 100%;
+  }
+  .about > main > div > article {
+    flex-direction: column;
+  }
+  .about > main > div > article > p {
+    text-align: center;
+  }
+}/*# sourceMappingURL=About.css.map */

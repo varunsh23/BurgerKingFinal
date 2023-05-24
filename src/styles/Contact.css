@@ -1,0 +1,78 @@
+.contact {
+  height: 100vh;
+  width: 100%;
+  background: rgb(6, 231, 236);
+  background: linear-gradient(90deg, rgb(6, 231, 236) 0%, rgb(238, 6, 241) 50%, rgb(230, 3, 114) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  background-color: white;
+  padding: 2rem;
+  width: 40%;
+}
+.contact > form > h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  margin: 2rem 0;
+}
+.contact > form > input,
+.contact > form > textarea,
+.contact > form > button {
+  padding: 1rem;
+  outline: none;
+  border: 1px solid gray;
+  margin: 0.5rem;
+  width: 60%;
+  border-radius: 5px;
+}
+.contact > form > button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.contact > form > button:hover {
+  color: rgb(120, 14, 35);
+}
+.contact .formBorder {
+  width: 200px;
+  background-color: white;
+  height: 80%;
+  position: relative;
+  border-radius: 0 200px 200px 0;
+}
+.contact .formBorder > div {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+.contact .formBorder > div > img {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .contact {
+    height: 70vh;
+  }
+  .contact > form {
+    width: 100%;
+    height: 100%;
+  }
+  .contact .formBorder {
+    display: none;
+  }
+}/*# sourceMappingURL=Contact.css.map */

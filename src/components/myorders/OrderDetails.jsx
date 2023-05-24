@@ -1,70 +1,87 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getOrderDetails } from "../../redux/actions/orderAction";
+import { useParams } from "react-router-dom";
+import Loader from "../layout/Loader";
 
 const OrderDetails = () => {
+  const params = useParams();
+  const { order, loading } = useSelector((state) => state.orders);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getOrderDetails(params.id));
+  }, [params.id, dispatch]);
+
   return (
     <section className="orderDetails">
+       {loading === false && order !== undefined ? (
       <main>
         <h1>Order Details</h1>
         <div>
           <h1>Shipping</h1>
           <p>
             <b>Address -</b>
-            {"rf 134 fvvtsb"}
+            {`${order.shippingInfo.address} ${order.shippingInfo.city} ${order.shippingInfo.state} ${order.shippingInfo.country} ${order.shippingInfo.pinCode}`}
           </p>
         </div>
         <div>
           <h1>Contact</h1>
           <p>
             <b>Name -</b>
-            {"Varun Sharma"}
+            {order.user.name}
           </p>
           <p>
             <b>Phone -</b>
-            {93563558232}
+            {order.shippingInfo.phoneNo}
           </p>
         </div>
         <div>
           <h1>Status</h1>
           <p>
             <b>Order Status -</b>
-            {"Processing"}
+            {order.orderStatus}
           </p>
           <p>
             <b>Placed At -</b>
-            {"14-04-2023"}
+            {order.createdAt.split("T")[0]}
           </p>
           <p>
             <b>Delivered At -</b>
-            {"15-04-2023"}
+            {order.deliveredAt ? order.deliveredAt.split("T")[0] : "NA"}
           </p>
         </div>
         <div>
           <h1>Payment</h1>
           <p>
             <b>Payment Method -</b>
-            {"Online Payment"}
+            {order.paymentMethod}
           </p>
           <p>
-            <b>Payment Reference -</b>#{"ykdrymfhhndnm"}
+            <b>Payment Reference -</b>
+            {order.paymentMethod === "Online" ? `#${order.paymentInfo}` : "NA"}
           </p>
           <p>
             <b>Paid At -</b>
-            {"15-04-2023"}
+            {order.paymentMethod === "Online"
+                ? order.paidAt.split("T")[0]
+                : "NA"}
           </p>
         </div>
         <div>
           <h1>Amount</h1>
           <p>
-            <b>Items Total -</b>₹{1350}
+            <b>Items Total -</b>₹{order.itemsPrice}
           </p>
           <p>
-            <b>Shipping Charges -</b>₹{250}
+            <b>Shipping Charges -</b>₹{order.shippingCharges}
           </p>
           <p>
-            <b>Tax Amount -</b>₹{200}
+            <b>Tax Amount -</b>₹{order.taxPrice}
           </p>
           <p>
-            <b>Total Amount -</b>₹{1800}
+            <b>Total Amount -</b>₹{order.totalAmount}
           </p>
         </div>
         <article>
@@ -72,27 +89,32 @@ const OrderDetails = () => {
           <div>
             <h4>Cheese Burger</h4>
             <div>
-              <span>{8}</span> x <span>{320}</span>
+            <span>{order.orderItems.cheeseBurger.quantity}</span> x
+                <span>{order.orderItems.cheeseBurger.price}</span>
             </div>
           </div>
           <div>
             <h4>Chicken Burger</h4>
             <div>
-              <span>{12}</span> x <span>{240}</span>
+              <span>{order.orderItems.chickenBurger.quantity}</span> x{" "}
+                <span>{order.orderItems.chickenBurger.price}</span>
             </div>
           </div>
           <div>
             <h4> Burger with Fries</h4>
             <div>
-              <span>{11}</span> x <span>{450}</span>
+            <span>{order.orderItems.burgerWithFries.quantity}</span> x{" "}
+                <span>{order.orderItems.burgerWithFries.price}</span>
             </div>
           </div>
           <div>
             <h4 style={{ fontWeight: 800 }}>Sub Total</h4>
-            <div style={{ fontWeight: 800 }}>₹{1800}</div>
+            <div style={{ fontWeight: 800 }}>₹{order.itemsPrice}</div>
           </div>
         </article>
-      </main>
+      </main>):(
+        <Loader/>
+      )}
     </section>
   );
 };

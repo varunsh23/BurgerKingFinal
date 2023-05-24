@@ -1,0 +1,43 @@
+nav {
+  height: 5rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+nav > div {
+  display: flex;
+  align-self: center;
+}
+nav > div > svg {
+  color: #e70;
+  font-size: 3rem;
+}
+nav > div > a {
+  margin: 0 2rem;
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+  transition: color 0.5s;
+}
+nav > div > a:hover {
+  color: rgb(125, 7, 7);
+}
+nav > div > a > svg {
+  color: #e70;
+  transition: inherit;
+  font-size: 1.5rem;
+}
+nav > div > a > svg:hover {
+  color: rgb(125, 7, 7);
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    padding: 1rem;
+  }
+  nav > div > a {
+    margin: 0 0.5rem;
+  }
+}/*# sourceMappingURL=Header.css.map */

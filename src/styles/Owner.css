@@ -1,0 +1,29 @@
+.Owner {
+  width: 100%;
+  height: 80vh;
+  background-color: crimson;
+}
+.Owner > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 55%;
+  text-align: center;
+  margin: auto;
+}
+.Owner > div > img {
+  border-radius: 100%;
+}
+.Owner > div > h3 {
+  font-size: 1.3rem;
+  padding: 2rem 0 1rem 0;
+}
+.Owner > div > p {
+  font-size: 0.8rem;
+  font-family: cursive;
+  letter-spacing: 3px;
+  line-height: 200%;
+}/*# sourceMappingURL=Owner.css.map */

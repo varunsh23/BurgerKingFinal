@@ -1,0 +1,76 @@
+#menu {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  padding: 4rem;
+}
+#menu > h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+#menu > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menucard {
+  background-color: white;
+  width: 30%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.menucard > div {
+  background-color: rgb(70, 24, 24);
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+  height: 4rem;
+}
+.menucard > main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menucard > main > img {
+  height: 15rem;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.menucard > main > h5 {
+  font-size: 1.8rem;
+}
+.menucard > main > p {
+  letter-spacing: 2px;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.menucard > main > button {
+  background-color: rgb(70, 24, 24);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+.menucard > main > button:hover {
+  background-color: darkred;
+}
+
+@media screen and (max-width: 600px) {
+  #menu > div {
+    flex-direction: column;
+  }
+  .menucard {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}/*# sourceMappingURL=Menu.css.map */

@@ -1,0 +1,26 @@
+.login {
+  height: 100vh;
+  width: 100%;
+  background-color: plum;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login > button {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.login > button > svg {
+  margin-left: 1rem;
+  font-size: 1.7rem;
+}
+.login > button:hover {
+  background-color: crimson;
+  color: white;
+}/*# sourceMappingURL=Login.css.map */
